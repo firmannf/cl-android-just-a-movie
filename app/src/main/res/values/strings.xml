@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Just A Movie</string>
+    <string name="main_txt_title">Movie Title</string>
+    <string name="detail_movie_year">Year</string>
+    <string name="detail_movie_director">Director</string>
+    <string name="detail_movie_genre">Genre</string>
+    <string name="detail_movie_plot">Plot</string>
 </resources>

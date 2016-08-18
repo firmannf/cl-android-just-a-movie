@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <include
+        android:id="@+id/add_movie_toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/add_movie_toolbar"
+        android:background="@android:color/white"
+        android:paddingBottom="64dp">
+
+        <LinearLayout
+            android:id="@+id/activity_add_movie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            tools:context="me.firmannizammudin.justamovie.view.AddMovieActivity">
+
+            <TextView
+                android:id="@+id/add_movie_txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Title"
+                android:textColor="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/add_movie_et_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:maxLines="1"
+                app:layout_constraintLeft_toLeftOf="@+id/activity_add_movie"
+                app:layout_constraintRight_toRightOf="@+id/activity_add_movie"
+                app:layout_constraintTop_toBottomOf="@+id/add_movie_txt_title" />
+
+            <TextView
+                android:id="@+id/add_movie_txt_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Year"
+                android:textColor="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/add_movie_et_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:inputType="number"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/add_movie_txt_director"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Director"
+                android:textColor="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/add_movie_et_director"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/add_movie_txt_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Genre"
+                android:textColor="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/add_movie_et_genre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <TextView
+                android:id="@+id/add_movie_txt_plot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Plot"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintLeft_toLeftOf="@+id/activity_add_movie"
+                app:layout_constraintTop_toBottomOf="@+id/add_movie_et_genre" />
+
+            <EditText
+                android:id="@+id/add_movie_et_plot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/add_movie_txt_poster"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Poster"
+                android:textColor="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/add_movie_et_poster"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginStart="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:inputType="text"
+                android:maxLines="1" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/add_movie_btn_create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="Create"
+        android:textColor="@android:color/white" />
+</RelativeLayout>

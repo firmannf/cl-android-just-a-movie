@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.DetailMovieActivity"
+    android:background="@android:color/white">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/detail_movie_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="192dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/detail_movie_toolbar">
+
+            <ImageView
+                android:id="@+id/detail_movie_iv_header"
+                android:layout_width="match_parent"
+                android:layout_height="192dp"
+                android:background="@color/colorPrimary"
+                android:scaleType="centerCrop" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/detail_movie_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:theme="@style/AppTheme.PopupOverlay"/>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/detail_movie_txt_title_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/detail_movie_year"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/detail_movie_txt_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp"
+                android:layout_below="@id/detail_movie_txt_title_year"
+                android:text="@string/detail_movie_year"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/detail_movie_txt_title_director"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detail_movie_txt_year"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/detail_movie_director"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/detail_movie_txt_director"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detail_movie_txt_title_director"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp"
+                android:text="@string/detail_movie_director"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/detail_movie_txt_title_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detail_movie_txt_director"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/detail_movie_genre"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/detail_movie_txt_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detail_movie_txt_title_genre"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp"
+                android:text="@string/detail_movie_genre"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/detail_movie_txt_title_plot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detail_movie_txt_genre"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="@string/detail_movie_plot"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/detail_movie_txt_plot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/detail_movie_txt_title_plot"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp"
+                android:text="@string/detail_movie_plot"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
