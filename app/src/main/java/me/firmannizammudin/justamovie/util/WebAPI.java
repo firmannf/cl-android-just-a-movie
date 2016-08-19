@@ -13,21 +13,5 @@ import retrofit2.http.POST;
  */
 
 public interface WebAPI {
-    String BASE_URL = "http://private-29404-justamovie.apiary-mock.com";
-
-    @GET("/movies")
-    Call<Movie.MovieList> getMovies();
-
-    @POST("/movies")
-    Call<Movie.MovieData> createMovie(@Body Movie movie);
-
-    class Factory {
-        public static WebAPI create() {
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-            return retrofit.create(WebAPI.class);
-        }
-    }
+    //Retrofit Here
 }

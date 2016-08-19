@@ -47,26 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
         setupToolbar();
         setupRecyclerView();
-
-        WebAPI webAPI = WebAPI.Factory.create();
-        Call<Movie.MovieList> call = webAPI.getMovies();
-        call.enqueue(new Callback<Movie.MovieList>() {
-            @Override
-            public void onResponse(Call<Movie.MovieList> call, Response<Movie.MovieList> response) {
-                int code = response.code();
-                if (code == 200) {
-                    movies.addAll(response.body().getData());
-                    rvAdapter.notifyDataSetChanged();
-                } else {
-                    Toast.makeText(MainActivity.this, "Did not work : " + String.valueOf(code), Toast.LENGTH_LONG).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Movie.MovieList> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Did not work : " + t.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
+       
+        //Retrofit Here
+        
     }
 
     @Override

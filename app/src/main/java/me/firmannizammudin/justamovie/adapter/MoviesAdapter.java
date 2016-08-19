@@ -29,15 +29,15 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
     private Context context;
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        @BindView(R.id.main_iv_poster)
-        ImageView ivPoster;
+        // @BindView(R.id.main_iv_poster)
+        // ImageView ivPoster;
 
-        @BindView(R.id.main_txt_title)
-        TextView txtTitle;
+        // @BindView(R.id.main_txt_title)
+        // TextView txtTitle;
 
         public ViewHolder(View v) {
             super(v);
-            ButterKnife.bind(this, v);
+            // ButterKnife.bind(this, v);
             v.setOnClickListener(this);
         }
 

@@ -87,27 +87,8 @@ public class AddMovieActivity extends AppCompatActivity {
         movie.setMovieGenre(new ArrayList<>(Arrays.asList(etGenre.toString().split(","))));
         movie.setMoviePlot(etPlot.getText().toString().trim());
         movie.setMoviePoster(etPoster.getText().toString().trim());
-
-        WebAPI webAPI = WebAPI.Factory.create();
-        Call<Movie.MovieData> call = webAPI.createMovie(movie);
-        call.enqueue(new Callback<Movie.MovieData>() {
-            @Override
-            public void onResponse(Call<Movie.MovieData> call, Response<Movie.MovieData> response) {
-                int code = response.code();
-                if (code == 201) {
-                    Intent returnIntent = new Intent();
-                    returnIntent.putExtra("result", new Gson().toJson(response.body().getData()));
-                    setResult(Activity.RESULT_OK, returnIntent);
-                    finish();
-                } else {
-                    Toast.makeText(AddMovieActivity.this, "Did not work : " + String.valueOf(code), Toast.LENGTH_LONG).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Movie.MovieData> call, Throwable t) {
-                Toast.makeText(AddMovieActivity.this, "Did not work : " + t.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
+        
+        //Retrofit Here
+        
     }
 }

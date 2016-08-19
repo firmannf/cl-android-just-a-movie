@@ -9,28 +9,4 @@
     android:background="@android:color/white"
     tools:context=".view.MainActivity">
 
-    <ImageView
-        android:id="@+id/main_iv_poster"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintLeft_toLeftOf="@+id/activity_main_list_item"
-        app:layout_constraintRight_toRightOf="@+id/activity_main_list_item"
-        app:layout_constraintTop_toTopOf="@+id/activity_main_list_item" />
-
-    <TextView
-        android:id="@+id/main_txt_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/main_txt_title"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/activity_main_list_item"
-        app:layout_constraintLeft_toLeftOf="@+id/activity_main_list_item"
-        app:layout_constraintTop_toBottomOf="@+id/main_iv_poster"
-        app:layout_constraintVertical_bias="1.0" />
-
 </android.support.constraint.ConstraintLayout>
