@@ -8,7 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -21,7 +20,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.firmannizammudin.justamovie.R;
 import me.firmannizammudin.justamovie.model.Movie;
-import me.firmannizammudin.justamovie.model.Movies;
 import me.firmannizammudin.justamovie.util.WebAPI;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -86,15 +84,15 @@ public class AddMovieActivity extends AppCompatActivity {
         movie.setMovieName(etTitle.getText().toString().trim());
         movie.setMovieYear(etYear.getText().toString().trim());
         movie.setMovieDirector(etDirector.getText().toString().trim());
-        movie.setMovieGenre(new ArrayList<String>(Arrays.asList(etGenre.toString().split(" , "))));
+        movie.setMovieGenre(new ArrayList<>(Arrays.asList(etGenre.toString().split(","))));
         movie.setMoviePlot(etPlot.getText().toString().trim());
         movie.setMoviePoster(etPoster.getText().toString().trim());
 
         WebAPI webAPI = WebAPI.Factory.create();
-        Call<Movie> call = webAPI.createMovie(movie);
-        call.enqueue(new Callback<Movie>() {
+        Call<Movie.MovieData> call = webAPI.createMovie(movie);
+        call.enqueue(new Callback<Movie.MovieData>() {
             @Override
-            public void onResponse(Call<Movie> call, Response<Movie> response) {
+            public void onResponse(Call<Movie.MovieData> call, Response<Movie.MovieData> response) {
                 int code = response.code();
                 if (code == 201) {
                     Intent returnIntent = new Intent();
@@ -107,7 +105,7 @@ public class AddMovieActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Movie> call, Throwable t) {
+            public void onFailure(Call<Movie.MovieData> call, Throwable t) {
                 Toast.makeText(AddMovieActivity.this, "Did not work : " + t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });

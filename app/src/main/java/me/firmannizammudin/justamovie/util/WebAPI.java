@@ -1,9 +1,6 @@
 package me.firmannizammudin.justamovie.util;
 
-import java.util.List;
-
 import me.firmannizammudin.justamovie.model.Movie;
-import me.firmannizammudin.justamovie.model.Movies;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -19,10 +16,10 @@ public interface WebAPI {
     String BASE_URL = "http://private-29404-justamovie.apiary-mock.com";
 
     @GET("/movies")
-    Call<Movies> getMovies();
+    Call<Movie.MovieList> getMovies();
 
     @POST("/movies")
-    Call<Movie> createMovie(@Body Movie movie);
+    Call<Movie.MovieData> createMovie(@Body Movie movie);
 
     class Factory {
         public static WebAPI create() {

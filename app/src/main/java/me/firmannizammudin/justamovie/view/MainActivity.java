@@ -2,7 +2,6 @@ package me.firmannizammudin.justamovie.view;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,7 +20,6 @@ import butterknife.OnClick;
 import me.firmannizammudin.justamovie.R;
 import me.firmannizammudin.justamovie.adapter.MoviesAdapter;
 import me.firmannizammudin.justamovie.model.Movie;
-import me.firmannizammudin.justamovie.model.Movies;
 import me.firmannizammudin.justamovie.util.WebAPI;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -51,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
         setupRecyclerView();
 
         WebAPI webAPI = WebAPI.Factory.create();
-        Call<Movies> call = webAPI.getMovies();
-        call.enqueue(new Callback<Movies>() {
+        Call<Movie.MovieList> call = webAPI.getMovies();
+        call.enqueue(new Callback<Movie.MovieList>() {
             @Override
-            public void onResponse(Call<Movies> call, Response<Movies> response) {
+            public void onResponse(Call<Movie.MovieList> call, Response<Movie.MovieList> response) {
                 int code = response.code();
                 if (code == 200) {
                     movies.addAll(response.body().getData());
@@ -65,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<Movies> call, Throwable t) {
+            public void onFailure(Call<Movie.MovieList> call, Throwable t) {
                 Toast.makeText(MainActivity.this, "Did not work : " + t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
@@ -77,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == ADD_MOVIE) {
             if (resultCode == Activity.RESULT_OK) {
                 movies.add(new Gson().fromJson(data.getStringExtra("result"), Movie.class));
+                rvAdapter.notifyDataSetChanged();
             }
         }
     }

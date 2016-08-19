@@ -6,7 +6,7 @@ import java.util.List;
  * Created by Firman on 18-Aug-16.
  */
 
-public class Movie extends Base {
+public class Movie {
     private int movieId;
     private String movieName;
     private String movieYear;
@@ -14,7 +14,6 @@ public class Movie extends Base {
     private List<String> movieGenre;
     private String moviePoster;
     private String moviePlot;
-    private Movie data;
 
     public int getMovieId() {
         return movieId;
@@ -72,11 +71,27 @@ public class Movie extends Base {
         this.moviePlot = moviePlot;
     }
 
-    public Movie getData() {
-        return data;
+    public class MovieData extends Base {
+        private Movie data;
+
+        public Movie getData() {
+            return data;
+        }
+
+        public void setData(Movie data) {
+            this.data = data;
+        }
     }
 
-    public void setData(Movie data) {
-        this.data = data;
+    public class MovieList extends Base {
+        List<Movie> data;
+
+        public List<Movie> getData() {
+            return data;
+        }
+
+        public void setData(List<Movie> data) {
+            this.data = data;
+        }
     }
 }
