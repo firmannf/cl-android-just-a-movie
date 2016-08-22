@@ -65,8 +65,8 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         Movie movie = movies.get(position);
-        Glide.with(context).load(movie.getMoviePoster()).into(viewHolder.ivPoster);
-        viewHolder.txtTitle.setText(movie.getMovieName());
+//        Glide.with(context).load(movie.getMoviePoster()).into(viewHolder.ivPoster);
+//        viewHolder.txtTitle.setText(movie.getMovieName());
     }
 
     @Override
